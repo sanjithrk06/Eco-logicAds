@@ -1,11 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
   font-family: "logo";
-  src: local("venesiaregular-e48gj"),
-    url("./assets/fonts/venesiaregular-e48gj.otf") format("opentype");
+  src: local("confortotrial-bold"),
+    url("./assets/fonts/confortotrial-bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "titlePrimary";
+  src: local("confortotrial-medium"),
+    url("./assets/fonts/confortotrial-medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "titleSecondary";
+  src: local("confortotrial-regular"),
+    url("./assets/fonts/confortotrial-regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "textPrimary";
+  src: local("confortotrial-light"),
+    url("./assets/fonts/confortotrial-light.otf") format("opentype");
+}
+@font-face {
+  font-family: "textSecondary";
+  src: local("confortotrial-thin"),
+    url("./assets/fonts/confortotrial-thin.otf") format("opentype");
 }
 
 @layer utilities {
@@ -15,6 +36,65 @@
 
   .form-input {
     @apply w-full rounded-full border border-gray-300  px-2 py-1 mb-4;
+  }
+
+  .filter-primary {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(73%) saturate(643%)
+      hue-rotate(120deg) brightness(97%) contrast(97%);
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/40 rounded-full border-2 border-primary/40;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply px-8 mb-32 text-center max-w-6xl mx-auto;
+  }
+
+  .font-logo {
+    @apply font-raleway font-bold text-3xl;
+  }
+
+  .logo-attribute {
+    @apply font-raleway font-bold text-4xl text-primary;
+  }
+
+  .title-attribute {
+    @apply font-raleway font-extralight text-4xl text-primary pb-1;
+  }
+
+  .subTitle-attribute {
+    @apply font-raleway font-bold text-3xl text-text/90 pb-10;
+  }
+
+  .main-para {
+    @apply font-raleway font-semibold text-text/80 text-base leading-relaxed text-justify;
+  }
+
+  .secondary-para {
+    @apply font-raleway font-normal text-text/80 text-base leading-relaxed text-justify;
+  }
+
+  .btn-primary {
+    @apply bg-primary/80 text-white text-sm font-semibold font-raleway hover:ring-1 hover:ring-primary hover:bg-secondary hover:text-primary duration-300 cursor-pointer py-2 px-5 w-auto rounded-full z-10;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-primary text-sm font-semibold font-raleway hover:ring-1 hover:ring-primary hover:bg-secondary hover:text-primary cursor-pointer py-2 px-5 w-auto rounded-xl duration-300 z-10 flex flex-row pr-0 hover:pr-3;
   }
 }
 

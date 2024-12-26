@@ -4,21 +4,21 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        logo: ["logo"],
+        textPrimary: ["textPrimary"],
+        textSecondary: ["textSecondary"],
+        titlePrimary: ["titlePrimary"],
+        titleSecondary: ["titleSecondary"],
+        raleway: ["Raleway", "sans-serif"],
       },
       colors: {
-        primary: "#f42c37",
-        secondary: "#f42c37",
-        brandYellow: "#fdc62e",
-        brandGreen: "#2dcc6f",
-        brandBlue: "#1376f4",
-        brandWhite: "#eeeeee",
+        primary: "#66B539",
+        secondary: "#E8F7DD",
+        text: "#374148",
+        heading: "#151B1F",
       },
       container: {
         center: true,
-        padding: {
-          sm: "3rem",
-        },
+        padding: "3rem",
       },
     },
   },
