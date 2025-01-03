@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Products } from "../constant.js";
 import { NavLink } from "react-router-dom";
 
 const ProductPage = () => {
   const location = useLocation();
-  const productId = location.state;
+  const productId = location.state || useParams();
 
   useEffect(() => {
     // Scroll to the top when the component mounts
@@ -43,9 +43,9 @@ const ProductPage = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
-      className=""
+      className=" container-main max-w-7xl text-start mb-0 px-0 md:px-8 mx-auto"
     >
-      <div className="container pt-5 pl-16">
+      <div className="container pt-5 pl-10 md:pl-16">
         <nav className="flex">
           <ol className="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
             <li className="inline-flex items-center">
@@ -120,7 +120,7 @@ const ProductPage = () => {
       </div>
       <div className="container ">
         <motion.div
-          className="container mx-auto px-4 py-8"
+          className="container px-0 md:px-4 py-8"
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -173,7 +173,7 @@ const ProductPage = () => {
                 <span className="subTitle-attribute text-xl font-semibold mr-2">
                   ₹{product.price[selectedSize]}
                 </span>
-                <span className="title-attribute text-base">
+                <span className="title-attribute text-base font-normal">
                   ({sizeMapping[selectedSize]})
                 </span>
               </div>

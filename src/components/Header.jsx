@@ -23,10 +23,10 @@ const Header = () => {
         >
           <img
             src={logo}
-            className="w-[45px] transform transition-transform duration-300"
+            className="w-[45px] max-md:w-[40px] transform transition-transform duration-300"
             alt="Eco-logicAds Logo"
           />
-          <span className="logo-attribute transform transition-all duration-300">
+          <span className="logo-attribute max-md:text-3xl transform transition-all duration-300">
             Eco-logicAds
           </span>
         </a>

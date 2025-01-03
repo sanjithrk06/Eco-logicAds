@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -22,6 +22,31 @@ const Contact = () => {
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   };
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const whatsappNumber = "9123548812";
+    const message = `
+      Hi, There! *${formData.subject}*\n\n${formData.message}\n\n*My Details:*\n${formData.name}\n${formData.mobile}\n${formData.email} 
+    `.trim();
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappLink, "_blank");
+  };
+
   return (
     <motion.div
       className="container max-w-7xl py-8 mx-auto px-5 md:px-2"
@@ -40,7 +65,7 @@ const Contact = () => {
       </motion.div>
       <div className="flex flex-col lg:flex-row gap-10 lg:pb-16 px-4 mx-auto max-w-6xl">
         <motion.div className="lg:w-2/3" variants={itemVariants}>
-          <form action="#" className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-8">
             <motion.div variants={itemVariants}>
               <label htmlFor="name" className="block mb-2 main-para">
                 Your name
@@ -48,6 +73,8 @@ const Contact = () => {
               <input
                 type="text"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="shadow-sm bg-gray-50 border border-primary/30 secondary-para text-sm rounded-lg focus:ring-primary focus:ring-1 outline-none block w-full p-2.5"
                 placeholder="John Doe"
                 required
@@ -61,8 +88,10 @@ const Contact = () => {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="shadow-sm bg-gray-50 border border-primary/30 secondary-para text-sm rounded-lg focus:ring-primary focus:ring-1 outline-none block w-full p-2.5"
-                  placeholder="name@flowbite.com"
+                  placeholder="name@gmail.com"
                   required
                 />
               </motion.div>
@@ -73,6 +102,8 @@ const Contact = () => {
                 <input
                   type="text"
                   id="mobile"
+                  value={formData.mobile}
+                  onChange={handleChange}
                   className="shadow-sm bg-gray-50 border border-primary/30 secondary-para text-sm rounded-lg focus:ring-primary focus:ring-1 outline-none block w-full p-2.5"
                   placeholder="1234567890"
                   required
@@ -86,6 +117,8 @@ const Contact = () => {
               <input
                 type="text"
                 id="subject"
+                value={formData.subject}
+                onChange={handleChange}
                 className="shadow-sm bg-gray-50 border border-primary/30 secondary-para text-sm rounded-lg focus:ring-primary focus:ring-1 outline-none block w-full p-2.5"
                 placeholder="Let us know how we can help you"
                 required
@@ -98,6 +131,8 @@ const Contact = () => {
               <textarea
                 id="message"
                 rows="6"
+                value={formData.message}
+                onChange={handleChange}
                 className="shadow-sm bg-gray-50 border border-primary/30 secondary-para text-sm rounded-lg focus:ring-primary focus:ring-1 outline-none block w-full p-2.5"
                 placeholder="Leave a comment..."
               ></textarea>

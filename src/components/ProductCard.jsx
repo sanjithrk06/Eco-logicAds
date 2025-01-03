@@ -73,7 +73,7 @@ const ProductCard = ({ data }) => {
                 variants={imageVariants}
                 src={item.img}
                 alt={item.title}
-                className="h-[280px] w-[360px] object-cover rounded-md bg-secondary/20"
+                className="h-[280px] w-[360px] object-cover rounded-md bg-secondary/40"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               />

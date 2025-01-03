@@ -88,7 +88,7 @@ const Banner = () => {
         <p className="subTitle-attribute">Revolutionize Your Advertising</p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 pt-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pt-2">
         {[
           {
             icon: peak,

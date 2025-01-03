@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import logo from "../assets/logo.avif";
 import { Mail } from "lucide-react";
 import { FaLinkedinIn } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 // Container animation variants
 const containerVariants = {
@@ -50,7 +51,30 @@ const listItemVariants = {
   },
 };
 
+const links = [
+  { name: "My Story", link: "/#mystory" },
+  { name: "Our Products", link: "/our-products" },
+  { name: "Contact Us", link: "/contact" },
+];
+
+const products = [
+  { name: "Ripple Cups", id: "1" },
+  { name: "Cold Cups", id: "2" },
+  { name: "Double Wall Cups", id: "3" },
+  { name: "Single Wall Cups", id: "4" },
+];
+
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleProductDetails = (id) => {
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Navigate to the product details page with the item's data as parameters
+    navigate(`/product/${id}`, { state: id });
+  };
+
   return (
     <motion.footer
       className="bg-gradient-to-t from-secondary via-secondary/70 to-secondary/20 shadow-2xl shadow-secondary"
@@ -105,18 +129,15 @@ const Footer = () => {
                 Important Links
               </h2>
               <ul className="main-para text-center flex flex-col gap-2 font-normal">
-                {["My Story", "Products", "Contact Us"].map((item, index) => (
+                {links.map((item, index) => (
                   <motion.li
-                    key={item}
+                    key={index}
                     variants={listItemVariants}
                     custom={index}
                     whileHover="hover"
                   >
-                    <a
-                      href={`/${item.toLowerCase().replace(" ", "-")}`}
-                      className="hover:underline"
-                    >
-                      {item}
+                    <a href={item.link} className="hover:underline">
+                      {item.name}
                     </a>
                   </motion.li>
                 ))}
@@ -128,20 +149,18 @@ const Footer = () => {
                 Our Products
               </h2>
               <ul className="main-para text-center flex flex-col gap-2 font-normal">
-                {[
-                  "Ripple Cups",
-                  "Cold Cups",
-                  "Single Wall Cups",
-                  "Double Wall Cups",
-                ].map((item, index) => (
+                {products.map((item, index) => (
                   <motion.li
-                    key={item}
+                    key={index}
                     variants={listItemVariants}
                     custom={index}
                     whileHover="hover"
                   >
-                    <a href="#" className="hover:underline">
-                      {item}
+                    <a
+                      onClick={() => handleProductDetails(item.id)}
+                      className="hover:underline cursor-pointer"
+                    >
+                      {item.name}
                     </a>
                   </motion.li>
                 ))}

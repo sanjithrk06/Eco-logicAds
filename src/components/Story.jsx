@@ -51,6 +51,7 @@ const imageVariants = {
 const Story = () => {
   return (
     <motion.div
+      id="mystory"
       className="container-main"
       initial="hidden"
       whileInView="visible"

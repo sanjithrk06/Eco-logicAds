@@ -108,32 +108,6 @@ const About = () => {
                 brighter future for generations to come.
               </motion.p>
             </motion.div>
-            <motion.a
-              href="/about"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <button className="bg-secondary text-primary text-sm font-semibold font-raleway hover:ring-1 hover:ring-primary hover:bg-secondary hover:text-primary cursor-pointer py-2 px-5 w-auto rounded-xl duration-300 z-10 flex flex-row group pr-0 ease-in">
-                Read More
-                <svg
-                  className="opacity-0 invisible group-hover:mx-1 group-hover:mr-3 group-hover:visible group-hover:opacity-100 transition-all duration-300 ease-out"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                >
-                  <path
-                    d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996"
-                    stroke="#66B539"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </motion.a>
           </motion.div>
         </div>
       </div>
