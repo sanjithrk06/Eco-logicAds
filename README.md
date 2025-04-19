@@ -33,7 +33,6 @@ Ecologic-Ads is a digital platform that showcases eco-conscious advertising solu
 
 - **Frontend Framework**: React.js
 - **Styling**: Tailwind CSS
-- **Animations**: Framer Motion (if used)
-- **Form Handling**: EmailJS or similar (if applicable)
+- **Animations**: Framer Motion
 
 ---
