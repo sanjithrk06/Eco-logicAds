@@ -6,14 +6,6 @@ A visually engaging website that introduces a unique blend of sustainability and
 
 ---
 
-## Demo Outcomes
-
-<img src='./src/assets/home.png' alt='Applicaiton Demo'>
-<img src='./src/assets/products.png' alt='Applicaiton Demo'>
-<img src='./src/assets/inquiry.png' alt='Applicaiton Demo'>
-
----
-
 ## 🌱 About the Project
 
 Ecologic-Ads is a digital platform that showcases eco-conscious advertising solutions using printed paper cups. The site presents a sleek and responsive design to help businesses explore this sustainable marketing opportunity.
@@ -34,5 +26,13 @@ Ecologic-Ads is a digital platform that showcases eco-conscious advertising solu
 - **Frontend Framework**: React.js
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
+
+---
+
+## Demo Outcomes
+
+<img src='./src/assets/home.png' alt='Applicaiton Demo'>
+<img src='./src/assets/products.png' alt='Applicaiton Demo'>
+<img src='./src/assets/inquiry.png' alt='Applicaiton Demo'>
 
 ---
